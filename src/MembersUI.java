@@ -1,12 +1,14 @@
+import original.Member;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.List;
+import java.util.Iterator;
 
 /* 사용자 메뉴 : 회원 정보를 등록, 목록 출력, 수정, 삭제 기능 */
-public class MemberUI {
+public class MembersUI {
     private BufferedReader br;
 
-    public MemberUI() {
+    public MembersUI() {
         br = new BufferedReader(new InputStreamReader(System.in));
     }
 
@@ -48,12 +50,12 @@ public class MemberUI {
     }
 
     // 2. 회원 목록 보기(리스트 출력)
-    public void printMemberList(List<Member> members){
+    public void printMemberList(Iterator<Member> iter){
         System.out.println("Email            Name             Birth");
         System.out.println("=======================================");
 
-        for(int i = 0; i < members.size(); i++){
-            Member member = members.get(i);
+        while (iter.hasNext()){
+            Member member = iter.next();
             System.out.print(member.getEmail());
             System.out.print("            ");
             System.out.print(member.getName());

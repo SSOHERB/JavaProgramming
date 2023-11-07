@@ -1,3 +1,5 @@
+package original;
+
 import java.util.List;
 
 /* 메뉴 출력하고 모든 기능 실행 */
@@ -5,7 +7,7 @@ public class MemberMain {
     public static void main(String[] args) {
         MemberUI memberUI = new MemberUI();
         MemberDao memberDao = new MemberDao("/tmp/members.dat");
-        // 파일에 있는 회원목록 얻기 (List 타입의 Member 형태로)
+        // 파일에 있는 회원목록 얻기 (List 타입의 original.Member 형태로)
         List<Member> members = memberDao.getMember();
 
         while (true) {
@@ -24,12 +26,12 @@ public class MemberMain {
                 String email = memberUI.inputEmail();
                 int findIndex = -1;
                 for(int i = 0; i < members.size(); i++){
-                    // 3-1. MemberDao에 있는 List<Member> 정보 가져오기
+                    // 3-1. MemberDao에 있는 List<original.Member> 정보 가져오기
                     Member m = members.get(i);
 
                     // 3-2. 기존의 회원정보 이메일(m.getEmail()) == (입력)수정할 email과 같은지 비교
                     if(m.getEmail().equals(email)){
-                        findIndex = i; // 같은 Member 정보를 findIndex에 담는다.
+                        findIndex = i; // 같은 original.Member 정보를 findIndex에 담는다.
                         break;
                     }
                 }

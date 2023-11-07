@@ -1,8 +1,10 @@
+package original;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/* 파일에서 List 형태의 Member 정보를 저장 OR 읽어오는 클래스 */
+/* 파일에서 List 형태의 original.Member 정보를 저장 OR 읽어오는 클래스 */
 public class MemberDao {
     private String filename;
 
@@ -29,7 +31,7 @@ public class MemberDao {
 
         List<Member> list = null;
         try(ObjectInputStream in = new ObjectInputStream(new FileInputStream(filename))){
-            // 파일에 쓰여진 객체를 읽고 Member 형식의 List 객체로 형변환
+            // 파일에 쓰여진 객체를 읽고 original.Member 형식의 List 객체로 형변환
             list = (List<Member>)in.readObject();
         } catch (Exception ex){
             // 객체의 클래스를 찾을 수 없는 예외 발생시 (ClassNotFoundException) 예외 던지기
