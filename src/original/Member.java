@@ -1,3 +1,5 @@
+package original;
+
 import java.io.Serializable;
 
 public class Member implements Serializable {
@@ -25,7 +27,7 @@ public class Member implements Serializable {
 
     @Override
     public String toString() {
-        return "Member{" +
+        return "original.Member{" +
                 "email='" + email + '\'' +
                 ", name='" + name + '\'' +
                 ", birth=" + birth +
